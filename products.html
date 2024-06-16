@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!--? ## Step 1: Don't Forget To LIKE SHARE & SUBSCRIBE TO THAPA TECHNCIAL YOUTUBE CHANNEL 👉 https://www.youtube.com/thapatechnical -->
+
+  <link rel="stylesheet" href="style.css" />
+  <title>js ecom website</title>
+</head>
+
+<body>
+  <header class="section-navbar">
+    <section class="top_txt">
+      <div class="head container">
+        <div class="head_txt">
+          <p>Free shipping, 30-day return or refund guarantee.</p>
+        </div>
+        <div class="sing_in_up">
+          <a href="# ">SIGN IN</a>
+          <a href="# ">SIGN UP</a>
+        </div>
+      </div>
+    </section>
+    <div class="container">
+      <div class="navbar-brand">
+        <a href="index.html">
+          <img src="public/images/download.jpeg" alt="thapa eCommerce logo" class="logo" width="80%" height="auto" />
+        </a>
+      </div>
+
+      <nav class="navbar">
+        <ul>
+          <li class="nav-item">
+            <a href="/" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item">
+            <a href="about.html" class="nav-link">about</a>
+          </li>
+          <li class="nav-item">
+            <a href="products.html" class="nav-link">products</a>
+          </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link">contact</a>
+          </li>
+          <li class="nav-item">
+            <a href="addToCart.html" class="nav-link add-to-cart-button" id="cartValue">
+              <i class="fa-solid fa-cart-shopping">0 </i>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+ 
+
+  <!-- ========== Start Extra Product Section ========== -->
+  <section class="section-extra-product">
+    <div class="container grid grid-three--cols">
+      <div class="div-extra grid grid-two--cols">
+        <div class="extra-text">
+          <p>new year sale</p>
+          <h3>get and extra 50% off</h3>
+          <a href="#">Show now</a>
+        </div>
+        <div class="extra-img extra-laptop">
+          <img src="public/images/laptop.png" alt="" />
+        </div>
+      </div>
+
+      <div class="div-extra grid grid-two--cols">
+        <div class="extra-text">
+          <p>new year sale</p>
+          <h3>40% discount on speakers</h3>
+          <a href="#">Show now</a>
+        </div>
+        <div class="extra-img">
+          <img src="public/images/headphoneEcom.png" alt="" />
+        </div>
+      </div>
+
+      <div class="div-extra grid grid-two--cols">
+        <div class="extra-text">
+          <p>new year sale</p>
+          <h3>get and extra 50% off</h3>
+          <a href="#">Show now</a>
+        </div>
+        <div class="extra-img">
+          <img src="public/images/mobiles.png" alt="" />
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ========== End Extra Product Section ========== -->
+
+  <!-- ========== Start policy ========== -->
+  <section class="section-policy">
+    <div class="container grid grid-four--cols">
+      <div class="div-policy">
+        <div class="icons">
+          <i class="fa-solid fa-truck-fast"></i>
+        </div>
+        <div class="div-policy-text">
+          <p>worldwide shipping</p>
+          <p>order above $100</p>
+        </div>
+      </div>
+
+      <div class="div-policy">
+        <div class="icons">
+          <i class="fa-solid fa-rotate"></i>
+        </div>
+        <div class="div-policy-text">
+          <p>Easy 30 Day Returns</p>
+          <p>Back Returns in 7 Days</p>
+        </div>
+      </div>
+
+      <div class="div-policy">
+        <div class="icons">
+          <i class="fa-solid fa-hand-holding-dollar"></i>
+        </div>
+        <div class="div-policy-text">
+          <p>money back guarantee</p>
+          <p>guarantee with in 30-Days</p>
+        </div>
+      </div>
+
+      <div class="div-policy">
+        <div class="icons">
+          <i class="fa-solid fa-headset"></i>
+        </div>
+        <div class="div-policy-text">
+          <p>Easy Online Support</p>
+          <p>24/7 Any time support</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ========== End policy ========== -->
+
+  <!-- ========== Start Our Products Section ========== -->
+
+  <section class="section-products container">
+    <div class="">
+      <h2 class="section-common--heading">Checkout Thapa Store</h2>
+    </div>
+
+    <section class="container">
+      <div id="productContainer"></div>
+    </section>
+  </section>
+
+  <!-- ========== Start Product Template Section ========== -->
+
+  <template id="productTemplate">
+    <div class="cards" id="cardValue">
+      <article class="information [card]">
+        <span class="category"></span>
+        <div class="imageContainer">
+          <img class="productImage" src="" alt="" />
+        </div>
+        <h2 class="productName"></h2>
+
+        <div class="productRating">
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
+        </div>
+
+        <p class="productDescription"></p>
+
+        <div class="productPriceElement">
+          <p class="productPrice"></p>
+          <p class="productActualPrice"></p>
+        </div>
+
+        <div class="productStockElement">
+          <p class="productProperty">Total Stocks Available:</p>
+          <p class="productStock"></p>
+        </div>
+
+        <div class="productQuantityElement">
+          <p class="productProperty">Quantity(Pieces)</p>
+          <div class="stockElement">
+            <button class="cartIncrement">+</button>
+            <p class="productQuantity">1</p>
+            <button class="cartDecrement">-</button>
+          </div>
+        </div>
+
+        <button class="add-to-cart-button">
+          <i class="fa-solid fa-cart-shopping"></i> Add To Cart
+        </button>
+      </article>
+    </div>
+  </template>
+
+  <!-- ========== End Product Template Section ========== -->
+  <!-- ========== End Our Products Section ========== -->
+
+  
+  <!-- ========== Start footer Section ========== -->
+  <footer class="section-footer">
+    <div class="footer-container container">
+      <div class="content_1">
+        <img src="public/images/images.jpeg" alt="logo" />
+        <p>
+          Welcome to Thapa EcomStore, your ultimate destination for
+          cutting-edge gadgets!
+        </p>
+        <img src="https://i.postimg.cc/Nj9dgJ98/cards.png" alt="cards" />
+      </div>
+      <div class="content_2">
+        <h4>SHOPPING</h4>
+        <a href="#">Computer Store</a>
+        <a href="#">Laptop Store</a>
+        <a href="#">Accessories</a>
+        <a href="#">Sales & Discount</a>
+      </div>
+      <div class="content_3">
+        <h4>Experience</h4>
+        <a href="./contact.html">Contact Us</a>
+        <a href="" target="_blank">Payment Method</a>
+        <a href="" target="_blank">Delivery</a>
+        <a href="" target="_blank">Return and Exchange</a>
+      </div>
+      <div class="content_4">
+        <h4>NEWSLETTER</h4>
+        <p>Be the first to know about new<br />arrivals, sales & promos!</p>
+        <div class="f-mail">
+          <input type="email" placeholder="Your Email" />
+          <i class="bx bx-envelope"></i>
+        </div>
+        <hr />
+      </div>
+    </div>
+    <div class="f-design">
+      <div class="f-design-txt">
+        <p>Design and Code by shreyash</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== End footer Section ========== -->
+  <script type="module" src="main.js"></script>
+</body>
+
+</html>
+<!-- data:image/png;base64,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 -->
